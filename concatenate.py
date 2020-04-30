@@ -7,7 +7,7 @@ from typing import Iterable, Generator
 
 import click
 
-EXCEPT_HEAD = ['[', '「', '（', '　']
+EXCEPT_HEAD = ['[', '「', '（', '　', '\n']
 
 def concat(base_str: str, add_strs: Iterable[str]) -> str:
     """concat string and return new string
@@ -20,8 +20,6 @@ def preprocess(strs: Iterable[str]) -> Generator[str, None, None]:
     """
     for string in strs:
         try:
-            if len(string) == 0:
-                yield string
             if string[0] in EXCEPT_HEAD:
                 yield string
             else:
