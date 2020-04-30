@@ -4,7 +4,7 @@ RUN apt-get update && \
     apt-get install -y locales && \
     locale-gen ja_JP.UTF-8
 
-ENV LANG=ja_JP.UTF-8
+ENV LANG ja_JP.UTF-8
 
 RUN mkdir -p /app
 WORKDIR /app
