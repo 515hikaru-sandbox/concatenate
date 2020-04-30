@@ -40,8 +40,8 @@ def main(target):
             lines = f.readlines()
             process_lines = preprocess(lines)
             text = concat(text, process_lines)
-            text += '[newpage]'
-    print(text[:-10])
+            text += '[newpage]\n'
+    print(text[:-11])
 
 
 if __name__ == "__main__":
