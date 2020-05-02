@@ -23,6 +23,3 @@ def test_preprocess(test_input, expected):
     results = preprocess(test_input)
     for result, exp in zip(results, expected):
         assert result == exp
-
-def test_insert_newpage():
-    
