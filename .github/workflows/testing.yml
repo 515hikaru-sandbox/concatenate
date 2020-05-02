@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: Install
+    - name: Install and Run test
       uses: abatilo/actions-poetry@v1.6.0
       with:
         python_version: 3.7.7
