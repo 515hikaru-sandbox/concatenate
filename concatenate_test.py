@@ -4,7 +4,7 @@ testing
 
 import pytest
 
-from concatenate import concat, insert_newpage, preprocess, trim_end_newpage
+from concatenate import concat, preprocess
 
 
 def test_concat_string():
