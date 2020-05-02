@@ -27,6 +27,14 @@ def preprocess(strs: Iterable[str]) -> Generator[str, None, None]:
         except StopIteration:
             return
 
+def insert_newpage(string: str) -> str:
+    return string + '[newpage]\n'
+
+def trim_end_newpage(string: str) -> str:
+    if not string.endswith('[newpage]\n'):
+        return string
+    return string[:-10]
+
 
 @click.command()
 @click.argument("target")
@@ -40,8 +48,8 @@ def main(target):
             lines = f.readlines()
             process_lines = preprocess(lines)
             text = concat(text, process_lines)
-            text += '[newpage]\n'
-    print(text[:-11])
+            text = insert_newpage(text)
+    print(trim_end_newpage(text))
 
 
 if __name__ == "__main__":
