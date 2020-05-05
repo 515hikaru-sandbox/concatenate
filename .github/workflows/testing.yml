@@ -6,6 +6,17 @@ on:
     branches: [ master ]
 
 jobs:
+  type_check:
+    name: type_check
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Install and Run Type Check
+      uses: abatilo/actions-poetry@v1.6.0
+      with:
+        python_version: 3.7.7
+        poetry_version: 1.0.5
+        args: install; poetry run mypy concatenate.py
   pytest:
     name: pytest
     runs-on: ubuntu-latest
