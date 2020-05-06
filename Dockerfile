@@ -5,7 +5,7 @@ RUN apt-get update && \
     locale-gen ja_JP.UTF-8
 
 ENV LANG ja_JP.UTF-8
-ENV CONCATENATE_VERSION 0.9.2
+ENV CONCATENATE_VERSION 0.9.3-dev
 
 RUN mkdir -p /app
 WORKDIR /app

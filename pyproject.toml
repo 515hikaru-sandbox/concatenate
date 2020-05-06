@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "concatenate"
-version = "0.9.2"
+version = "0.9.3-dev"
 description = ""
 authors = ["515hikaru <12kojima.takahiro@gmail.com>"]
 license = "MIT"
