@@ -19,7 +19,12 @@ def test_concat_string():
 
 @pytest.mark.parametrize(
     "test_input,expected",
-    [(["foo\n"], ["　foo\n"]), (["bar\n", "boo\n", "\n", "boo\n"], ["　bar\n", "　boo\n", "\n", "　boo\n"])]
+    [
+        (["foo\n"], ["　foo\n"]),
+        (["bar\n", "boo\n", "\n", "boo\n"], ["　bar\n", "　boo\n", "\n", "　boo\n"]),
+        (["「こんにちは」\n"], ["「こんにちは」\n"]),
+        (["……それはない\n"], ["……それはない\n"]),
+    ]
 )
 def test_preprocess(test_input, expected):
     """全角空けのテスト

@@ -9,7 +9,7 @@ import click
 
 __version__ = '0.9.1'
 
-EXCEPT_HEAD = ['[', '「', '（', '　', '\n']
+EXCEPT_HEAD = ['[', '「', '（', '　', '\n', '…']
 
 def concat(base_str: str, add_strs: Iterable[str]) -> str:
     """concat string and return new string
