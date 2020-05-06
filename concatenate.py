@@ -7,6 +7,8 @@ from typing import Iterable, Generator
 
 import click
 
+__version__ = '0.9.0'
+
 EXCEPT_HEAD = ['[', '「', '（', '　', '\n']
 
 def concat(base_str: str, add_strs: Iterable[str]) -> str:
@@ -36,10 +38,13 @@ def trim_end_newpage(string: str) -> str:
     return string[:-10]
 
 
+
 @click.command()
 @click.argument("target")
+@click.version_option(__version__, prog_name='concatenate')
 def main(target):
-    """main"""
+    """ターゲットディレクトリ配下のテキストファイルに適当な前処理を施してファイルを連結する
+    """
     targets = Path(target).glob("*.txt")
     text = ""
     for file in sorted(targets):
